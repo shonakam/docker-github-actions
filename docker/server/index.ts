@@ -6,7 +6,7 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 06:32:59 by shonakam          #+#    #+#             */
-/*   Updated: 2024/09/09 07:23:12 by shonakam         ###   ########.fr       */
+/*   Updated: 2024/09/09 08:45:33 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ app.get('/', (req, res) => {
 	});
 });
 
-// app.get('/health', (req, res) => {
-// 	res.json({ 
-// 		status: 'ok',
-// 		message: 'health is running'
-// 	});
-// });
+app.get('/health', (req, res) => {
+	res.json({ 
+		status: 'ok',
+		message: 'health is running'
+	});
+});
 
 // app.get('/time', (req, res) => {
 //     const currentTime = new Date().toISOString();

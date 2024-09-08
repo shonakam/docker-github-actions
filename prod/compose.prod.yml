@@ -1,0 +1,16 @@
+x-logging: &logging
+  logging:
+    driver: "json-file"
+    options:
+      max-file: "10"
+      max-size: "100m"
+
+services:
+  server:
+    restart: on-failure
+    image:  ${DOCKER_USER:-cyaneq}/simple-server:${USER_TAG:-latest}
+    platform: linux/amd64
+    container_name: ${COMPOSE_PROJECT_NAME:-default}-simple-server-prod-container
+    ports:
+      - 3000
+    <<: *logging

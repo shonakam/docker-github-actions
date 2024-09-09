@@ -6,11 +6,10 @@
 /*   By: shonakam <shonakam@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 06:32:59 by shonakam          #+#    #+#             */
-/*   Updated: 2024/09/09 08:45:33 by shonakam         ###   ########.fr       */
+/*   Updated: 2024/09/09 08:55:51 by shonakam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-console.log("Hello via Bun!");
 import express from 'express';
 
 const app = express();

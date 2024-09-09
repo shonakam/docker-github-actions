@@ -5,6 +5,7 @@ on:
     branches: [ "master", "dev" ]
     paths:
       - "docker/server/**"
+      - "prod/**"
 
 # Dockerのログイン
 # 環境変数の設定

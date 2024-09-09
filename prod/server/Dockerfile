@@ -22,12 +22,9 @@ RUN /root/.bun/bin/bun run build
 # --- Final Stage ---
 FROM node:18.17.0
 
-RUN curl -fsSL https://bun.sh/install | bash
-ENV PATH="/root/.bun/bin:$PATH"
-
 RUN mkdir /app
 COPY --from=build "/home/build/server/dist" /app
 
 WORKDIR /app
 EXPOSE 3000
-ENTRYPOINT [ "bun", "run", "index.js" ]
+CMD ["node", "index.js"]

@@ -12,5 +12,5 @@ services:
     platform: linux/amd64
     container_name: ${COMPOSE_PROJECT_NAME:-default}-simple-server-prod-container
     ports:
-      - 3000
+      - "3000:3000"
     <<: *logging

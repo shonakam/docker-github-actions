@@ -1,5 +1,6 @@
 # Build Stage
-FROM node:18.17.0 AS build
+# FROM node:18.17.0 AS build
+FROM node:18.17.0
 
 ARG BUILD_DIR=/home/build
 ARG SRC_PATH=./docker/server
@@ -19,14 +20,17 @@ RUN /root/.bun/bin/bun add express @types/express typescript
 RUN /root/.bun/bin/bun install
 RUN /root/.bun/bin/bun run build
 
-# --- Final Stage ---
-FROM node:18.17.0
-
-RUN mkdir /app
-COPY --from=build "/home/build/server/dist" /app
-COPY --from=build "/home/build/server/package.json" /app/
-
-RUN npm install
-WORKDIR /app
+# WORKDIR /app
 EXPOSE 3000
-CMD ["node", "index.js"]
+CMD ["bun", "run", "start"]
+
+# --- Final Stage ---
+# FROM node:18.17.0
+
+# RUN mkdir /app
+# COPY --from=build "/home/build/server/dist" /app
+# COPY --from=build "/home/build/server/package.json" /app/
+
+# RUN npm install
+# WORKDIR /app
+# EXPOSE 3000

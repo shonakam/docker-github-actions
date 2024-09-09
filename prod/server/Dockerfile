@@ -24,7 +24,7 @@ FROM node:18.17.0
 
 RUN mkdir /app
 COPY --from=build "/home/build/server/dist" /app
-COPY --from=build "/home/build/server/package.json" /app
+COPY --from=build "/home/build/server/package.json" /app/package.json
 
 RUN npm install
 WORKDIR /app

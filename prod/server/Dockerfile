@@ -24,7 +24,9 @@ FROM node:18.17.0
 
 RUN mkdir /app
 COPY --from=build "/home/build/server/dist" /app
+COPY --from=build "/home/build/server/package.json" /app
 
+RUN npm install
 WORKDIR /app
 EXPOSE 3000
 CMD ["node", "index.js"]
